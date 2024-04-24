@@ -68,6 +68,11 @@ fun CreateUserAccount() {
             },
             modifier = Modifier.padding(5.dp)
         )
+        val isNotDate = remember {
+            derivedStateOf {
+                dataNascimento.length != 8 && dataNascimento.isNotEmpty()
+            }
+        }
         OutlinedTextField(
             value = dataNascimento,
             onValueChange = { dataNascimento = it.trim() },
@@ -79,6 +84,9 @@ fun CreateUserAccount() {
                 )
             },
             modifier = Modifier.padding(5.dp),
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            isError = isNotDate.value
+//            visualTransformation = { value -> toDateFormat(value.toString()) }
         )
 
         OutlinedTextField(
