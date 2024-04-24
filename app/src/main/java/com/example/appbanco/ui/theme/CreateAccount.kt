@@ -121,7 +121,18 @@ fun CreateUserAccount() {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             isError = isNotMatching.value
         )
-        ElevatedButton(onClick = { /*TODO*/ }, enabled = !isNotMatching.value) {}
+        ElevatedButton(
+            onClick = { /*TODO*/ },
+            enabled = !isNotMatching.value,
+            modifier = Modifier.padding(10.dp)
+        ) {
+            Text(
+                text = "Cadastrar",
+                color = MaterialTheme.colorScheme.primary,
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(5.dp)
+            )
+        }
     }
 }
 
