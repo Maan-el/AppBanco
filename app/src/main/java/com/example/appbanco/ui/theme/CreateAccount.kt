@@ -50,7 +50,11 @@ fun CreateUserAccount() {
         var email by remember { mutableStateOf("") }
         var dataNascimento by remember { mutableStateOf("") }
 
-        LogoBanco(Modifier.padding(20.dp))
+        LogoBanco(
+            Modifier
+                .padding(20.dp)
+                .clip(CircleShape)
+        )
 
         OutlinedTextField(
             value = nome,
@@ -62,6 +66,7 @@ fun CreateUserAccount() {
                     style = Typography.titleMedium,
                 )
             },
+            modifier = Modifier.padding(5.dp)
         )
         OutlinedTextField(
             value = dataNascimento,
@@ -73,6 +78,7 @@ fun CreateUserAccount() {
                     style = Typography.titleMedium
                 )
             },
+            modifier = Modifier.padding(5.dp),
         )
 
         OutlinedTextField(
@@ -85,7 +91,7 @@ fun CreateUserAccount() {
                     style = Typography.titleMedium
                 )
             },
-            visualTransformation = PasswordVisualTransformation(),
+            modifier = Modifier.padding(5.dp),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
         )
 
@@ -99,6 +105,7 @@ fun CreateUserAccount() {
                     style = Typography.titleMedium
                 )
             },
+            modifier = Modifier.padding(5.dp),
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
         )
@@ -112,11 +119,12 @@ fun CreateUserAccount() {
             onValueChange = { senhaConfirmar = it.trim() },
             label = {
                 Text(
-                    text = "Senha",
+                    text = "Confirmar senha",
                     color = MaterialTheme.colorScheme.primary,
                     style = Typography.titleMedium
                 )
             },
+            modifier = Modifier.padding(5.dp),
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             isError = isNotMatching.value
