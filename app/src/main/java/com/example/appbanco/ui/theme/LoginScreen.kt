@@ -57,7 +57,8 @@ private fun UserButtons() {
         Text(
             text = "Entrar",
             color = MaterialTheme.colorScheme.primary,
-            style = MaterialTheme.typography.titleMedium
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(5.dp)
         )
     }
     ElevatedButton(
@@ -67,7 +68,8 @@ private fun UserButtons() {
         Text(
             text = "Criar conta",
             color = MaterialTheme.colorScheme.primary,
-            style = MaterialTheme.typography.titleMedium
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(5.dp)
         )
     }
 }
