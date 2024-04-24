@@ -124,3 +124,25 @@ fun CreateUserAccount() {
         ElevatedButton(onClick = { /*TODO*/ }, enabled = !isNotMatching.value) {}
     }
 }
+
+fun toDateFormat(dateStr: String): TransformedText {
+    val date = LocalDateTime.parse(dateStr).toString()
+    return TransformedText(text = AnnotatedString(date), offsetMapping = MyOffsetMapping())
+}
+
+class MyOffsetMapping : OffsetMapping {
+    override fun originalToTransformed(offset: Int): Int = when (offset) {
+        in 0..1 -> offset
+        in 2..3 -> offset + 1
+        in 4..7 -> offset + 2
+        else -> offset + 3
+    }
+
+    override fun transformedToOriginal(offset: Int): Int = when (offset) {
+        in 0..1 -> offset
+        in 3..4 -> offset - 1
+        in 6..9 -> offset - 2
+        else -> offset - 3
+    }
+
+}
