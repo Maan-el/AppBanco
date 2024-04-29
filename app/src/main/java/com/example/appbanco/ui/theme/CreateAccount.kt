@@ -26,7 +26,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TransformedText
-import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.appbanco.ui.theme.ui.theme.AppBancoTheme
 import java.time.LocalDateTime
@@ -179,4 +179,12 @@ class MyOffsetMapping : OffsetMapping {
         else -> offset - 3
     }
 
+}
+
+@Composable
+@Preview
+private fun Preview() {
+    AppBancoTheme {
+        CreateUserAccount()
+    }
 }
