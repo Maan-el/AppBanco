@@ -51,7 +51,7 @@ fun Login() {
 private fun UserButtons() {
     ElevatedButton(
         onClick = { /*TODO*/ }, modifier = Modifier
-            .padding(30.dp)
+            .padding(20.dp)
             .width(150.dp)
     ) {
         Text(
@@ -63,7 +63,7 @@ private fun UserButtons() {
     }
     ElevatedButton(
         onClick = { },
-        modifier = Modifier.width(150.dp)
+        modifier = Modifier.width(150.dp).padding(top=5.dp)
     ) {
         Text(
             text = "Criar conta",
